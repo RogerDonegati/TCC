@@ -1,0 +1,73 @@
+http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm -> Roy Thomas Fielding (criador REST)
+curso: https://www.udemy.com/restful-apis/learn/v4/content -> Jackson Pires (Engenheiro de Software, Professor academico)
+https://pt.wikipedia.org/wiki/REST
+
+https://pt.wikipedia.org/wiki/JSON
+http://www.devmedia.com.br/introducao-json/23166 -> Alexandre Gama (Engenheiro de Software Sênior e Instrutor da Caelum)
+http://www.ietf.org/rfc/rfc4627.txt?number=4627 -> Douglas Crockford (especificador do JSON)
+
+
+api: application programming interface (interface de programação de aplicativos)
+conjunto de rotinas e padroes de programação para acesso a um aplicativo de software ou plataforma baseado na web
+
+
+
+rest representational state transfer - transferencia do estado representacional 
+tese de phd do Roy Fielding (principais autores de especificação http) 2000
+
+Modelo arquitetural que trabalha com requisição de http simples
+
+constraints:
+
+cliente-servidor: front-end back-end escalabilidade back-end
+stateless: requisições idependentes ao servidor, fechando conexao (segurança, praticiade)
+cache: respostas passiveis de cache
+interface uniforme: interface entre o cliente e o servidor obedecendo padrões
+sistema em camadas: adicionar elementos intermediarios transparentes
+codigo sob demanda (opcional): baixar codigo ou serviço conforme a requisição
+
+
+Rest conjunto de melhores praticas
+RESTful uma api que implementa REST
+podendo ser representado em XML, JSON ou YAML
+
+
+REST vs SOAP
+SOAP: simple object access protocol
+
+
+JSON: JavaScript Object Notation
+pares de informações
+
+
+
+
+   JavaScript Object Notation (JSON) is a lightweight, text-based,
+   language-independent data interchange format.  It was derived from
+   the ECMAScript Programming Language Standard.  JSON defines a small
+   set of formatting rules for the portable representation of structured
+   data.
+
+1.  Introduction
+
+   JavaScript Object Notation (JSON) is a text format for the
+   serialization of structured data.  It is derived from the object
+   literals of JavaScript, as defined in the ECMAScript Programming
+   Language Standard, Third Edition [ECMA].
+
+   JSON can represent four primitive types (strings, numbers, booleans,
+   and null) and two structured types (objects and arrays).
+
+   A string is a sequence of zero or more Unicode characters [UNICODE].
+
+   An object is an unordered collection of zero or more name/value
+   pairs, where a name is a string and a value is a string, number,
+   boolean, null, object, or array.
+
+   An array is an ordered sequence of zero or more values.
+
+   The terms "object" and "array" come from the conventions of
+   JavaScript.
+
+   JSON's design goals were for it to be minimal, portable, textual, and
+   a subset of JavaScript.
