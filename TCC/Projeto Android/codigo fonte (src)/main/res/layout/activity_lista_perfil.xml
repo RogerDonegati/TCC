@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tcc.zeugmaproject.zeugmaproject.Control.util.ListaPerfilActivity">
+
+    <SearchView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lista_perfil_searchview"
+        android:layout_alignParentTop="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:iconifiedByDefault="false"
+        android:queryHint="Buscar" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apenas Meus Amigos"
+        android:id="@+id/checkBox"
+        android:checked="true"
+        android:paddingRight="5dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/lista_perfil_searchview"
+        android:layout_alignRight="@+id/lista_perfil_searchview"
+        android:layout_alignEnd="@+id/lista_perfil_searchview" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Todos"
+        android:id="@+id/checkBox2"
+        android:checked="true"
+        android:enabled="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:textSize="20dp"
+        android:layout_below="@+id/lista_perfil_searchview"
+        android:layout_toLeftOf="@+id/checkBox"
+        android:layout_toStartOf="@+id/checkBox" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lista_perfil_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:layout_below="@+id/checkBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

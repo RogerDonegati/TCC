@@ -1,0 +1,84 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Control.fragments.MovieFragment">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView1">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Populares"
+                    android:id="@+id/SubTitulo1"
+                    android:padding="@dimen/padding_titulo"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/horizontal_recycler_view1"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="180dp"
+                    android:layout_gravity="start"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Melhor avaliados"
+                    android:id="@+id/SubTitulo2"
+                    android:padding="@dimen/padding_titulo"
+                    android:layout_gravity="start"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/horizontal_recycler_view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_gravity="start"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Lançamentos"
+                    android:id="@+id/SubTitulo3"
+                    android:padding="@dimen/padding_titulo"
+                    android:layout_gravity="start"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/horizontal_recycler_view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_gravity="start"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Nos cinemas"
+                    android:id="@+id/SubTitulo4"
+                    android:padding="@dimen/padding_titulo"
+                    android:layout_gravity="start"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/horizontal_recycler_view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_gravity="start"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</FrameLayout>
