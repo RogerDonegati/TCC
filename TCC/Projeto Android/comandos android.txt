@@ -1,0 +1,145 @@
+--------------- Comandos de Android um oferecimento Romils Show ---------------
+
+//Seekbar (barra tipo volume)
+private SeekBar seekbar;
+seekbar = (Seekbar) findViewById(R.id.bar_seek);
+metodo onProgressChanges (position) 
+
+
+
+//Dialogs (msgs tipo deseja salvar, yes, no)
+private AlertDialog.Builder dialog;
+dialog = new AlertDialog.Builder(this);
+dialog.setTitle("titulo msg");
+dialog.setIcon(android.R.drawable.ic_delete*);
+dialog.setMessage("msg");
+dialog.setNegativeButton("nao", new DiallogInterface.OnClickListener(){}
+dialog.setPositiveButton("sim", new DiallogInterface.OnClickListener(){}
+dialog.setCancelable(false/true);
+dialog.create();
+dialog.show();
+
+
+
+rootView.findViewById(R.id.imageView1);
+
+
+
+//Chamar outra tela
+startActivity(new Intent(TelaQueVCEsta.this, TelaQuerIr.class));
+
+
+
+//Mensagens
+Tost.makeText(this, "ola", Toast.lenghtshort).show();
+e. printStackTrace; { try catch }
+
+
+
+//Banco de dados SQL
+private SQLiteDatabase bancoDados;
+bancoDados = openOnCreateDatabase("nome bd", mode_private, null);
+bancoDados.execSQL("create table if not exists teste(id integer primary key, auto.....");
+Cursor cursor = bancoDados.rawQuery("select *...", null)
+cursor.moveFirst();
+cursor.getString(int_coluna);
+
+
+
+//Banco de dados NO SQL (Firebase)
+private DatabaseReference firabaseReference = FirebaseDatabase.getInstance().getReference(); {conecta, use bd}
+private DatabaseReference usuarioReferencia = firabaseReference.child("usuarios");  {select, tabela}
+usuarioReferencia.child("001").setValue(usuario);  {insert/Update}
+usuarioReferencia.addValueEventListener(new ValueEventListener() {onDataChange()} (fucking real time)
+
+
+
+//Listas e exibição 
+private ArraryAdaptrer<string> intensAdaptador;
+private ArraryList itens;
+itens = new ArrayList<String>
+itens.add(cursor.getString(id));
+itensAdaptador = new ArraryAdapter<String>(this, android.r.layout.simple_list_item_1, android.r.is.text1, itens);
+lista.setAdapter(itensAdaptador);
+itens.get(indice); {pega linha inteira}
+
+
+
+// habilitar pressionar em uma lista
+listaTarefas.setLongClickable(true);
+listaTarefas.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {return true;}});
+
+
+
+//Formatar Data
+Date dataAtual = Calendar.getInstance().getTime();
+DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+String hoje = dateFormat.format(dataAtual);
+
+Date data = Date;
+SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+String dataFormatada = formato.format(data);
+
+String data_incial = "2009-10-30";
+SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+Date data = formato.parse(data_inicial);
+formato.applyPattern("dd/MM/yyyy");
+String dataFormatada = formato.format(data);
+
+
+
+//Formatar Decimal
+DecimalFormat df = new DecimalFormat("#,##0.00", new DecimalFormatSymbols(LOCAL));
+String tx = df.format(120000.3456);
+
+
+
+//ProgressDialog    
+private ProgressDialog progressDialog;
+progressDialog = new ProgressDialog( MainActivity.this );
+progressDialog.setTitle("Titulo da barra");
+progressDialog.setMessage("configura a mensagem de carregando os conteúdos!!!"); 
+progressDialog.setCancelable(true); {configura se a progressDialog pode ser cancelada pelo usuário}
+progressDialog.show();
+
+
+
+//Passar objetos pelas telas         
+implements Serializable {no objeto que deseja passar}    
+Intent intent = new Intent(MainActivity.this, DetalhesActivity.class);
+Usuario usuario = new Usuario("Jamilton", "1234");
+intent.putExtra("objeto", usuario );
+startActivity(intent);
+Intent i = getIntent(); {Na segunda tela}
+Usuario usuario = (Usuario) i.getSerializableExtra("objeto");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LinearLayoutManager layoutManager= new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false);
+mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+mRecyclerView.setLayoutManager(layoutManager);

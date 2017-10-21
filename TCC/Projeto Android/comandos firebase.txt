@@ -1,0 +1,95 @@
+orderByChild()?—?ordena de acordo com o valor de um dos atributos
+orderByKey()?—?ordena de acordo com a chave primária
+orderByValue()?—?ordena de acordo com o valor de cada nó
+
+limitToFirst()?—?permite-nos limitar quantos registros pretendemos ler (retorna os primeiros resultados);
+limitToLast()?—?funciona como o método acima, mas retorna os últimos resultados;
+startAt()?—?mais para definir intervalos. Especifica-se o valor por onde deve começar.
+endAt()?—?especifica-se o valor onde o intervalo termina.
+equalTo()?—?retorna o resultado que for igual ao valor que passamos por parametro.
+
+raiz.child("usuarios").push().setValue(user);
+user.nome = "Mario"; 
+raiz.child("usuarios/8").setValue(user); (UPDATE TABLE usuarios SET nome = 'Mario' WHERE id_usuario = 8;)
+raiz.child("usuario/8").setValue(null); (DELETE FROM usuarios WHERE id_usuario = 8;)
+
+Query query2 = raiz.child('usuarios').orderByChild('email').equalTo('alice@email.com'); (SELECT * FROM usuarios WHERE email = "maria@email.com";)
+Query query3 = raiz.child('grupos').limitToFirst(5);
+Query query4 = raiz.child('usuarios').orderByChild('nome').startAt('R');  (SELECT * FROM usuarios WHERE nome LIKE 'R%';)
+Query query5 = raiz.child('usuarios').orderByChild('idade').endAt(19); (SELECT * FROM usuarios WHERE idade < 20;)
+Query query6 = raiz.child('usuarios').orderByChild('idade').startAt(25).endAt(50); (SELECT * FROM usuarios WHERE idade>=25 AND idade<=50)
+
+DatabaseReference ref1 = raiz.child("usuarios/1/nome");
+DatabaseReference ref2 = raiz.child("estudantes/am/1/nome");
+ref1.setValue("Rosa");
+ref2.setValue("Rosa");
+
+
+raiz.child("usuarios/8").addValueEventListener(new ValueEventListener() {  (atualiza)
+   @Override
+   public void onDataChange(DataSnapshot dataSnapshot) 
+   {
+      Utilizador user = dataSnapshot.getValue(Utilizador.class);
+   }
+   @Override
+   public void onCancelled(DatabaseError databaseError) {
+     //Se ocorrer um erro}
+});
+
+Query query1 = raiz.child("grupos").orderByChild("nome").equalTo("Analise Matematica").limitToFirst(1);
+query1.addListenerForSingleValueEvent(new ValueEventListener() {
+    @Override
+    public void onDataChange(DataSnapshot dataSnapshot) {
+           //Passar os dados para a interface grafica
+}
+
+    @Override
+    public void onCancelled(DatabaseError databaseError) {
+     //Se ocorrer um erro
+    }
+});
+
+
+Query query2 = raiz.child("estudantes/am");
+//E colocamos um listener
+query2.addChildEventListener(new ChildEventListener() {
+    @Override
+    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+        //colocar os nomes na interface grafica
+       @Override
+        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+           DatabaseReference usuario = raiz.child("usuarios/"+dataSnapshot.getKey());
+           usuario.addListenerForSingleValueEvent(new ValueEventListener() {
+      @Override
+        public void onDataChange(DataSnapshot dataSnapshot) { 
+            //Obter os outros dados do usuario
+         }
+
+       @Override
+        public void onCancelled(DatabaseError databaseError) {
+          }
+        });
+    }
+    @Override
+    public void onChildChanged(DataSnapshot dataSnapshot, String s) {}
+    @Override
+    public void onChildRemoved(DataSnapshot dataSnapshot) {}
+    @Override
+    public void onChildMoved(DataSnapshot dataSnapshot, String s) {}
+    @Override
+    public void onCancelled(DatabaseError databaseError) {}
+});
+
+
+        Iterable<DataSnapshot> avaliacoesPendentes = dataSnapshot.getChildren();
+        if (avaliacoesPendentes != null) {
+            for (DataSnapshot dataSnapshot1: avaliacoesPendentes) {
+                if (dataSnapshot1.getValue() != null) {
+                    Avaliacao avaliacao = dataSnapshot1.getValue(Avaliacao.class);
+ 
+                    beanAvaliacaoPendente = new BeanAvaliacaoPendente(dataSnapshot1.getKey(), avaliacao.getNome(), avaliacao.getDataDaAvaliacao());
+                    listaAvaliacoesPendentes.add(beanAvaliacaoPendente);
+                }
+            }
+        }
+ 

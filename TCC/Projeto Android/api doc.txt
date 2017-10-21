@@ -1,0 +1,25 @@
+Examples
+
+0d8d301e2ced1c56b2aa06a1c355d81c - nossa key
+https://api.themoviedb.org/3/movie/293660?api_key=0d8d301e2ced1c56b2aa06a1c355d81c
+https://api.themoviedb.org/3/search/movie?query=dunkirk&api_key=0d8d301e2ced1c56b2aa06a1c355d81c&language=pt-BR
+https://image.tmdb.org/t/p/w500/fudEG1VUWuOqleXv6NwCExK0VLy.jpg
+
+https://api.themoviedb.org/3/movie/550/images?api_key={api_key}&language=en-US&include_image_language=en,null
+https://api.themoviedb.org/3/movie/550?api_key=0d8d301e2ced1c56b2aa06a1c355d81c&language=en-US&append_to_response=videos,images&include_image_language=en,null&include_video_language=en,null
+
+https://api.themoviedb.org/3/movie/157336?api_key=0d8d301e2ced1c56b2aa06a1c355d81c&append_to_response=videos,images
+https://api.themoviedb.org/3/search/person?query=scarlet&api_key=0d8d301e2ced1c56b2aa06a1c355d81c&language=en-US
+https://api.themoviedb.org/3/genre/movie/list?api_key=0d8d301e2ced1c56b2aa06a1c355d81c&language=en-US
+
+
+https://api.themoviedb.org/3/movie/293660/recommendations?api_key=0d8d301e2ced1c56b2aa06a1c355d81c&language=pt-BR
+/movie/{movie_id}/recommendations
+
+
+LinearLayoutManager layoutManager= new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false);
+mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+mRecyclerView.setLayoutManager(layoutManager);
+
+
+https://api.themoviedb.org/3/movie/popular?api_key=0d8d301e2ced1c56b2aa06a1c355d81c&language=pt-BR&page=2
